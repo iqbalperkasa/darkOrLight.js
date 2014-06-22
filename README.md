@@ -14,6 +14,8 @@ darkOrLight(selector, dark, light);
 - **dark:** (Optional) Default: *dark*. Custom class for dark element(s).
 - **light:** (Optional) Default: *light*. Custom class for light element(s).
 
+Pass **dark** or **light** argument with "falsey" value to returns its default value. "Falsey" values are `0`, `null`, `undefined`, `""` (empty string), or `false`.
+
 #### Example
 ```html
 <script src="path/to/darkOrLight.min.js"></script>

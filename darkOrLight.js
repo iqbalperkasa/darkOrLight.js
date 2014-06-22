@@ -9,16 +9,14 @@ function darkOrLight(selector, dark, light) {
 		for (i = 0; i < selector.length; i++) {
 			elems.push(selector[i]);
 		}
-	} else {
-		elems.push(selector);
-	}
+	} else elems.push(selector);
 
 	for (i = 0; i < elems.length; i++) {
 		bg = window.getComputedStyle(elems[i]).getPropertyValue("background-color");
 
 		if (bg[3] !== "a") {
-			dark = (typeof dark === "undefined") || (Number(dark) === 0) ? "dark" : dark;
-			light = (typeof light === "undefined") || (Number(light) === 0) ? "light" : light;
+			dark || (dark = "dark");
+			light || (light = "light");
 			bg = bg.replace("rgb", "").replace(/\s/g, "").replace("(", "").replace(")", "");
 			bg = bg.split(",");
 
